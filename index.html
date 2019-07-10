@@ -1,4 +1,4 @@
-<!-- <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
 <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs='sourceType: webcam;'>
@@ -10,27 +10,4 @@
   <a-entity camera>
   </a-entity>
   </a-scene>
-</body> -->
-<video id="player" controls autoplay></video>
-<button id="capture">Capturar</button>
-<canvas id="snapshot" width=320 height=240></canvas>
-<script>
-  var player = document.getElementById('player');
-  var snapshotCanvas = document.getElementById('snapshot');
-  var captureButton = document.getElementById('capture');
-
-  var handleSuccess = function(stream) {
-    // Attach the video stream to the video element and autoplay.
-    player.srcObject = stream;
-  };
-
-  captureButton.addEventListener('click', function() {
-    var context = snapshot.getContext('2d');
-    // Draw the video frame to the canvas.
-    context.drawImage(player, 0, 0, snapshotCanvas.width,
-        snapshotCanvas.height);
-  });
-
-  navigator.mediaDevices.getUserMedia({video: true})
-      .then(handleSuccess);
-</script>
+</body>
